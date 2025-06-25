@@ -102,6 +102,16 @@ CREATE TABLE Payment (
 * comment: TEXT, NOT NULL
 * created_at: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
 */
+CREATE TABLE Review (
+  review_id  NOT NULL ,
+  property_id  NOT NULL,
+  user_id  NOT NULL,
+  rating  NOT NULL ,
+  comment  NOT NULL ,
+  created_at  NOT NULL ,
+  PRIMARY KEY  (review_id),
+  KEY idx_actor_last_name (last_name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 /*
@@ -113,6 +123,21 @@ CREATE TABLE Payment (
 * sent_at: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
 
 */
+CREATE TABLE Message (
+  message_id  NOT NULL ,
+  sender_id  NOT NULL,
+  recipient_id  NOT NULL,
+  message_body  NOT NULL ,
+  sent_at  NOT NULL ,
+  PRIMARY KEY  (message_id),
+  KEY idx_actor_last_name (last_name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+
+
 
 --
 -- Table structure for table `actor`
