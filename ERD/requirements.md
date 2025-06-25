@@ -107,6 +107,6 @@
 
 ## User Sends Message (Many-to-Many via Message entity):
 
-*Description: A User can send multiple Messages, and a User can receive multiple Messages. This is a self-referencing many-to-many relationship.
+* Description: A User can send multiple Messages, and a User can receive multiple Messages. This is a self-referencing many-to-many relationship.
 * Notation: User | --O< Sends -- Message and User | --O< Receives -- Message (implicitly, as Message has both sender_id and recipient_id).
 * Database Implication: Message table has sender_id (FK) and recipient_id (FK), both referencing User.user_id.
