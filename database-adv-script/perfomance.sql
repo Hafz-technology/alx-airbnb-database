@@ -1,7 +1,9 @@
--- Objective: Refactor complex queries to improve performance.
+/* -- Objective: Refactor complex queries to improve performance. */
+/* 
+ Initial Query:
 
--- Initial Query: Retrieve all bookings along with user details, property details, and payment details.
--- This query uses multiple JOIN operations to combine data from four tables.
+ Retrieve all bookings along with user details, property details, and payment details.
+-- This query uses multiple JOIN operations to combine data from four tables. */ 
 SELECT
     B.booking_id,
     B.start_date,
@@ -24,8 +26,10 @@ JOIN
 JOIN
     Properties P ON B.property_id = P.property_id
 JOIN
-    Payments PM ON B.booking_id = PM.booking_id;
-    -- Assuming a direct link between Bookings and Payments via booking_id.
+    Payments PM ON B.booking_id = PM.booking_id
+WHERE
+    B.start_date >= '2025-01-01' AND B.end_date <= '2025-12-31';
+        -- Assuming a direct link between Bookings and Payments via booking_id.
     -- If Payments links via a separate payment_id in Bookings, adjust the JOIN condition accordingly.
 
 
