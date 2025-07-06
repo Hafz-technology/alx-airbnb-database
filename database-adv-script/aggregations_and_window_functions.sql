@@ -13,7 +13,6 @@ ORDER BY
 
 
 /*  Use a window function (ROW_NUMBER, RANK) to rank properties based on the total number of bookings they have received. */ 
-
 SELECT
     property_id,
     total_bookings,
@@ -27,4 +26,8 @@ FROM (
     GROUP BY
         property_id
 ) AS PropertyBookings;
+
+
+
+
 
